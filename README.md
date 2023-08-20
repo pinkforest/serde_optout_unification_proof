@@ -3,10 +3,20 @@
 Repro at top-bin directory
 
 ```
-top-bin]$ rm -rf target ; cargo build
-    Finished dev [unoptimized + debuginfo] target(s) in 0.00s
-$ rm -rf target ; cargo build --features from_source
-    Finished dev [unoptimized + debuginfo] target(s) in 0.00s
+$ rm -rf ../target ; cargo build --features from_source
+   Compiling proc-macro2 v1.0.66
+   Compiling unicode-ident v1.0.11
+   Compiling quote v1.0.33
+   Compiling syn v2.0.29
+   Compiling serde_derive v1.0.183 (/home/foobar/code/serde/precompiled/serde_derive)
+   Compiling some-lib v0.1.0 (/home/foobar/code/serde_optout_unification_proof/some-lib)
+   Compiling top-bin v0.1.0 (/home/foobar/code/serde_optout_unification_proof/top-bin)
+    Finished dev [unoptimized + debuginfo] target(s) in 2.97s
+[foobar@localhost top-bin]$ rm -rf ../target ; cargo build
+   Compiling serde_derive v1.0.183 (/home/foobar/code/serde/precompiled/serde_derive)
+   Compiling some-lib v0.1.0 (/home/foobar/code/serde_optout_unification_proof/some-lib)
+   Compiling top-bin v0.1.0 (/home/foobar/code/serde_optout_unification_proof/top-bin)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.33s
 ```
 
 from_source should feature unify so it gets built from source from top-bin
