@@ -1,0 +1,3 @@
+// well
+
+pub struct Foo;

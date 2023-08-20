@@ -1,0 +1,10 @@
+[package]
+name = "some-build-lib"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde_derive = { version = "1", path = "../../serde/precompiled/serde_derive" }
+
+[features]
+from_source = ["serde_derive/from_source"]

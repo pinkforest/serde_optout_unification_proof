@@ -1,0 +1,15 @@
+[package]
+name = "top-bin"
+version = "0.1.0"
+edition = "2021"
+
+# Below should see serde_derive / from_source feature unified
+
+[dependencies]
+some-lib = { version = "0.1", path = "../some-lib" }
+
+[build-dependencies]
+some-build-lib = { version = "0.1", path = "../some-build-lib" }
+
+[features]
+from_source = ["some-lib/from_source"]
